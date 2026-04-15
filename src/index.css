@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-white font-poppins antialiased overflow-x-hidden;
+  }
+}
+
+/* Fallback for Norwester if not locally installed */
+@font-face {
+  font-family: 'Norwester';
+  src: local('Norwester'), local('Impact');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.glass-panel {
+  @apply bg-white/10 backdrop-blur-sm border border-white/20;
+}
+
+.clinical-glow {
+  @apply shadow-[0_0_15px_rgba(59,130,246,0.4)];
+}
