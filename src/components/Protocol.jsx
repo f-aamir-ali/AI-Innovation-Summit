@@ -18,7 +18,7 @@ const phases = [
   {
     time: "03:00 PM - 04:00 PM",
     title: "The Science Fair Pitch",
-    desc: "Live demos for the judges."
+    desc: "Judges will walk by your table for your demo"
   },
   {
     time: "04:00 PM - 05:00 PM",
@@ -32,8 +32,8 @@ const Protocol = () => {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // Draw the vertical line on scroll
-      gsap.fromTo(".timeline-line-progress", 
+      // Draw the vertical logic
+      gsap.fromTo(".timeline-line-progress",
         { scaleY: 0 },
         {
           scaleY: 1,
@@ -47,67 +47,58 @@ const Protocol = () => {
         }
       );
 
-      // Animate items as they come into view
-      gsap.utils.toArray(".timeline-item").forEach((item) => {
-        gsap.fromTo(item, 
-          { x: -30, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: item,
-              start: "top 85%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-
-        // Dot pulse activation
-        gsap.fromTo(item.querySelector(".timeline-dot-core"),
-          { scale: 0.5, backgroundColor: "#162032" },
-          {
-            scale: 1.2,
-            backgroundColor: "#3B82F6",
-            duration: 0.5,
-            scrollTrigger: {
-              trigger: item,
-              start: "top 85%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
+      // Staggered fade-in for cards
+      gsap.from(".protocol-card", {
+        x: -30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
       });
     }, containerRef);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="schedule" ref={containerRef} className="py-32 md:py-48 px-6 md:px-12 w-full max-w-5xl mx-auto">
-      <h2 className="text-4xl md:text-5xl font-norwester text-white mb-20 text-center tracking-wide">
+    <section id="schedule" ref={containerRef} className="py-32 md:py-48 px-6 md:px-12 w-full max-w-4xl mx-auto">
+      <h2 className="text-4xl md:text-5xl font-norwester text-white mb-24 text-center tracking-wide">
         The 8-Hour Blueprint
       </h2>
 
-      <div className="timeline-container relative pl-8 md:pl-16">
+      <div className="timeline-container relative pl-12 md:pl-20">
         {/* The Vertical Line Base */}
         <div className="absolute left-0 top-2 bottom-0 w-[2px] bg-white/5"></div>
-        
-        {/* The Progress Line (Drawn on Scroll) */}
-        <div className="timeline-line-progress absolute left-0 top-2 bottom-0 w-[2px] bg-[#3B82F6] origin-top"></div>
 
-        <div className="flex flex-col gap-16">
+        {/* The Progress Line (Drawn on Scroll) */}
+        <div className="timeline-line-progress absolute left-0 top-2 bottom-0 w-[2px] bg-primary origin-top"></div>
+
+        <div className="flex flex-col gap-12">
           {phases.map((phase, idx) => (
-            <div key={idx} className="timeline-item relative">
-              {/* Pulsing Dot */}
-              <div className="absolute -left-[37px] md:-left-[69px] top-1 flex items-center justify-center">
-                <div className="timeline-dot-core w-4 h-4 rounded-full bg-[#162032] border-2 border-[#3B82F6] z-10"></div>
-                <div className="absolute w-4 h-4 rounded-full bg-[#3B82F6] opacity-30 animate-pulse"></div>
+            <div key={idx} className="relative protocol-card">
+              {/* Pulsing Dot Indicator */}
+              <div className="absolute -left-[54px] md:-left-[86px] top-8 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-primary z-10 shadow-[0_0_15px_rgba(59,130,246,0.6)]"></div>
               </div>
 
-              <div className="font-mono text-[#3B82F6] text-sm mb-2">{phase.time}</div>
-              <h3 className="font-norwester text-2xl md:text-3xl text-white mb-2">{phase.title}</h3>
-              <p className="font-poppins text-white/60 text-lg">{phase.desc}</p>
+              <div className="bg-[#162032] glass-3d-intensified rounded-[2rem] p-8 md:p-10 flex flex-col gap-4">
+                <div className="flex justify-between items-center">
+                  <span className="font-fredoka text-primary text-sm tracking-widest uppercase">Phase 0{idx + 1}</span>
+                  <span className="font-fredoka text-white/50 text-base md:text-lg">{phase.time}</span>
+                </div>
+
+                <h3 className="font-fredoka text-2xl md:text-3xl font-semibold text-white tracking-wide">
+                  {phase.title}
+                </h3>
+
+                <p className="font-poppins text-white/60 text-base leading-relaxed">
+                  {phase.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -7,8 +7,9 @@ import Hero from './components/Hero';
 import Perks from './components/Perks';
 import Mission from './components/Mission';
 import Protocol from './components/Protocol';
-import Logistics from './components/Logistics';
+import Roster from './components/Roster';
 import FAQ from './components/FAQ';
+import Network from './components/Network';
 import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +32,8 @@ function App() {
       <Perks />
       <Mission />
       <Protocol />
-      <Logistics />
+      <Roster />
+      <Network />
       <FAQ />
       <Footer />
     </div>

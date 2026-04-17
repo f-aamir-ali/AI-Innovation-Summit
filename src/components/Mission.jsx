@@ -6,17 +6,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Mission = () => {
   const containerRef = useRef(null);
+  const missionRef = useRef(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
+      // Central Text Animation
       gsap.from(".mission-text", {
-        y: 60,
+        y: 40,
         opacity: 0,
         duration: 1,
         stagger: 0.2,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: missionRef.current,
           start: "top 75%",
           toggleActions: "play none none reverse"
         }
@@ -26,17 +28,22 @@ const Mission = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 md:py-48 px-6 md:px-12 bg-canvas relative z-10 w-full flex justify-center text-center">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
-        <h2 className="mission-text text-4xl md:text-6xl lg:text-7xl font-norwester text-white mb-8 tracking-wide leading-tight">
-          Skip the flashcards.<br/>Build real impact.
-        </h2>
+    <section id="mission" ref={containerRef} className="bg-canvas relative z-10 w-full overflow-hidden">
+      <div ref={missionRef} className="relative w-full max-w-7xl mx-auto py-12 md:py-16 px-6 flex flex-col items-center justify-center overflow-hidden">
         
-        <p className="mission-text text-xl md:text-2xl font-poppins text-white/70 leading-relaxed max-w-3xl">
-          You won't be building fake study apps. You will use drag-and-drop AI tools to solve real operational bottlenecks for local Surrey businesses and Non-Profit.
-        </p>
+        {/* Text Stack (Center) */}
+        <div className="z-10 relative max-w-4xl text-center flex flex-col gap-8">
+          <h2 className="mission-text font-norwester text-white text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.1] tracking-wide">
+            SKIP THE FLASHCARDS.<br />
+            BUILD REAL IMPACT.
+          </h2>
+          
+          <p className="mission-text font-poppins text-white/70 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto">
+            You won't be building fake study apps. You will use drag-and-drop AI tools to solve real operational bottlenecks for local Surrey businesses and Non-Profit.
+          </p>
+        </div>
 
-        <div className="mission-text mt-16 w-1px h-32 bg-gradient-to-b from-primary to-transparent opacity-50"></div>
+        <div className="mission-text mt-12 w-[2px] h-12 bg-gradient-to-b from-primary to-transparent opacity-30"></div>
       </div>
     </section>
   );
