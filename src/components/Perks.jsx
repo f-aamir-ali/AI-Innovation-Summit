@@ -112,20 +112,23 @@ const Perks = () => {
 
         {/* Card 1: 8 Volunteering Hours */}
         <div
-          className="bg-[#e2e6be]/90 backdrop-blur-md rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
-          style={{ boxShadow: 'inset 2px 2px 2px rgba(255, 255, 255, 0.6), inset -2px -2px 2px rgba(0, 0, 0, 0.15), 0 12px 48px rgba(0, 0, 0, 0.1)' }}
+          className="bg-[#4a8eed]/90 backdrop-blur-xl rounded-[3rem] p-10 relative overflow-hidden flex flex-col justify-between min-h-[340px]"
+          style={{ 
+            boxShadow: 'inset 4px 4px 4px rgba(255, 255, 255, 0.3), inset -4px -4px 4px rgba(0, 0, 0, 0.4), 0px 32px 64px rgba(0, 0, 0, 0.3)' 
+          }}
         >
           <h3 className="font-fredoka font-bold text-2xl text-canvas">8 Volunteering Hours</h3>
-          <p className="font-poppins text-canvas/70 text-sm mt-2 mb-8">Official school-authorized hours.</p>
+          <p className="font-fredoka font-semibold text-canvas/70 text-sm mt-2 mb-8">Official school-authorized hours.</p>
 
           <div className="flex-1 flex items-center justify-center relative">
             <div className="relative z-10 flex items-center justify-center px-4">
               <span
                 ref={countRef}
-                className="font-norwester text-8xl md:text-9xl bg-gradient-to-br from-[#3E2723] to-[#5D4037] bg-clip-text text-transparent inline-block tabular-nums pr-4"
+                className="font-norwester text-8xl md:text-9xl bg-gradient-to-br from-white via-[#3e6ef0] via-[40%] to-[#3e6ef0] bg-clip-text text-transparent inline-block tabular-nums pr-4 relative z-20"
                 style={{
                   fontVariantNumeric: 'tabular-nums',
-                  filter: 'drop-shadow(-3px -3px 0px rgba(255,255,255,0.6)) drop-shadow(3px 3px 0px rgba(0,0,0,0.2))'
+                  filter: 'url(#liquid-glass-inner-number)',
+                  letterSpacing: '-0.02em'
                 }}
               >
                 0.0
@@ -144,68 +147,94 @@ const Perks = () => {
         {/* Card 2: Cash Prizes - The Figma Podium */}
         <div
           ref={podiumRef}
-          className="bg-[#e2e6be]/90 backdrop-blur-md rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
+          className="bg-[#4a8eed]/90 backdrop-blur-md rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
           style={{ boxShadow: 'inset 2px 2px 2px rgba(255, 255, 255, 0.6), inset -2px -2px 2px rgba(0, 0, 0, 0.15), 0 12px 48px rgba(0, 0, 0, 0.1)' }}
         >
           <div>
             <h3 className="font-fredoka font-bold text-2xl text-canvas">Cash Prizes</h3>
-            <p className="text-canvas/70 text-sm mt-2 mb-6">Real cash for top builders.</p>
+            <p className="font-fredoka font-semibold text-canvas/70 text-sm mt-2 mb-6">Real cash for top builders.</p>
           </div>
 
           <div className="flex-grow flex items-end justify-center gap-4 md:gap-8 mt-12 h-52 pb-4">
             {/* 2nd Place */}
             <div className="flex flex-col items-center gap-3">
-              <span className="podium-reward font-inter font-bold text-[#5D4037] text-lg z-10">$80</span>
+              <span className="podium-reward font-fredoka font-semibold text-[#202b8c] text-lg z-10">TBD</span>
               <div
-                className="w-16 h-[100px] bg-[#5D4037]/20 backdrop-blur-md rounded-[20px] podium-bar"
+                className="w-16 h-[100px] bg-gradient-to-br from-[#4a5fc1] via-[#202b8c] via-[40%] to-[#202b8c] backdrop-blur-md rounded-[20px] podium-bar"
                 style={{ boxShadow: 'inset 3px 3px 3px rgba(255, 255, 255, 0.5), inset -3px -3px 3px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.1)' }}
               ></div>
-              <span className="font-inter font-bold text-[#5D4037]/50 tracking-wide text-sm">Second</span>
+              <span className="font-fredoka font-semibold text-[#202b8c] tracking-wide text-sm">Second</span>
             </div>
 
             {/* 1st Place */}
             <div className="flex flex-col items-center gap-3">
-              <span className="podium-reward font-inter font-bold text-[#3E2723] text-xl z-10">$100</span>
+              <span className="podium-reward font-fredoka font-semibold text-[#101545] text-xl z-10">TBD</span>
               <div
-                className="w-16 h-[140px] bg-[#3E2723]/30 backdrop-blur-md rounded-[20px] podium-bar"
+                className="w-16 h-[140px] bg-gradient-to-br from-[#2a3b8c] via-[#101545] via-[40%] to-[#101545] backdrop-blur-md rounded-[20px] podium-bar"
                 style={{ boxShadow: 'inset 3px 3px 3px rgba(255, 255, 255, 0.5), inset -3px -3px 3px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.1)' }}
               ></div>
-              <span className="font-inter font-bold text-[#3E2723]/70 tracking-wide text-sm">First</span>
+              <span className="font-fredoka font-semibold text-[#101545] tracking-wide text-sm">First</span>
             </div>
 
             {/* 3rd Place */}
             <div className="flex flex-col items-center gap-3">
-              <span className="podium-reward font-inter font-bold text-[#8D6E63] text-lg z-10">$60</span>
+              <span className="podium-reward font-fredoka font-semibold text-[#3442c7] text-lg z-10">TBD</span>
               <div
-                className="w-16 h-[70px] bg-[#8D6E63]/20 backdrop-blur-md rounded-[20px] podium-bar"
+                className="w-16 h-[70px] bg-gradient-to-br from-[#6370e5] via-[#3442c7] via-[40%] to-[#3442c7] backdrop-blur-md rounded-[20px] podium-bar"
                 style={{ boxShadow: 'inset 3px 3px 3px rgba(255, 255, 255, 0.5), inset -3px -3px 3px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.1)' }}
               ></div>
-              <span className="font-inter font-bold text-[#8D6E63]/60 tracking-wide text-sm">Third</span>
+              <span className="font-fredoka font-semibold text-[#3442c7] tracking-wide text-sm">Third</span>
             </div>
           </div>
         </div>
 
 
-        {/* Card 3: Free Food & Drinks */}
+        {/* Card 3: Free Snacks */}
         <div
-          className="bg-[#e2e6be]/90 backdrop-blur-md rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
+          className="bg-[#4a8eed]/90 backdrop-blur-md rounded-[2rem] p-8 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
           ref={stackerRef}
           style={{ boxShadow: 'inset 2px 2px 2px rgba(255, 255, 255, 0.6), inset -2px -2px 2px rgba(0, 0, 0, 0.15), 0 12px 48px rgba(0, 0, 0, 0.1)' }}
         >
           <div>
-            <h3 className="font-fredoka font-bold text-2xl text-canvas">Free Food & Drinks</h3>
-            <p className="font-poppins text-canvas/70 text-sm mt-2">Fuel the build.</p>
+            <h3 className="font-fredoka font-bold text-2xl text-canvas">Free Snacks</h3>
+            <p className="font-fredoka font-semibold text-canvas/70 text-sm mt-2">Fuel the build.</p>
           </div>
 
           <div className="relative flex-grow min-h-[220px] w-full mt-8">
-            <img src="/food/cookie.png" alt="Cookie" className="food-pop-item drop-shadow-2xl absolute top-0 left-[5%] w-24 md:w-28 z-10 -rotate-12" />
-            <img src="/food/pizza.png" alt="Pizza" className="food-pop-item drop-shadow-2xl absolute top-[10%] right-[-5%] w-28 md:w-32 z-10 rotate-12" />
-            <img src="/food/juice.png" alt="Juice Box" className="food-pop-item drop-shadow-2xl absolute bottom-[5%] left-[10%] w-20 md:w-24 z-20 -rotate-3" />
-            <img src="/food/donut.png" alt="Donut" className="food-pop-item drop-shadow-2xl absolute bottom-0 right-[10%] w-24 md:w-28 z-30 rotate-6" />
+            <img src="/food/cookie.png" alt="Cookie" className="food-pop-item drop-shadow-2xl absolute -top-4 -left-4 w-32 md:w-40 z-10 -rotate-12" />
+            <img src="/food/donut.png" alt="Donut" className="food-pop-item drop-shadow-2xl absolute -bottom-4 -right-4 w-32 md:w-40 z-30 rotate-12" />
           </div>
         </div>
 
       </div>
+      {/* Liquid Glass Filter definitions for inside the number */}
+      <svg width="0" height="0" className="absolute pointer-events-none opacity-0">
+        <defs>
+          <filter id="liquid-glass-inner-number" x="-20%" y="-20%" width="140%" height="140%">
+            {/* Base blur for the inner edge calculation */}
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur" />
+            
+            {/* LIGHT CATCH: Top-Left refraction (Pushing white in from top-left) */}
+            <feOffset in="blur" dx="3" dy="3" result="offsetHighlight" />
+            <feComposite in="SourceAlpha" in2="offsetHighlight" operator="out" result="highlightMask" />
+            <feFlood floodColor="white" floodOpacity="0.8" result="whiteFlood" />
+            <feComposite in="whiteFlood" in2="highlightMask" operator="in" result="innerHighlight" />
+
+            {/* DARK RECESS: Bottom-Right occlusion (Pushing shadow in from bottom-right) */}
+            <feOffset in="blur" dx="-3" dy="-3" result="offsetShadow" />
+            <feComposite in="SourceAlpha" in2="offsetShadow" operator="out" result="shadowMask" />
+            <feFlood floodColor="black" floodOpacity="0.5" result="blackFlood" />
+            <feComposite in="blackFlood" in2="shadowMask" operator="in" result="innerShadow" />
+
+            {/* Combine the original text with these internal lighting effects */}
+            <feMerge>
+              <feMergeNode in="SourceGraphic" />
+              <feMergeNode in="innerHighlight" />
+              <feMergeNode in="innerShadow" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
     </section>
   );
 };
