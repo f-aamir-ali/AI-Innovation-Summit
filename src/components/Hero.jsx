@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { DETAILS_PDF_URL, REGISTER_URL } from '../constants/links';
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -12,7 +13,8 @@ const Hero = () => {
         duration: 1.2,
         stagger: 0.2,
         ease: "power3.out",
-        delay: 0.2
+        delay: 0.2,
+        clearProps: "transform,opacity"
       });
     }, containerRef);
     return () => ctx.revert();
@@ -34,29 +36,34 @@ const Hero = () => {
         </h1>
 
         <p className="hero-element text-lg md:text-xl font-poppins text-white/80 mt-6 max-w-3xl">
-          Build real AI solutions for local businesses | 8 Volunteering Hours<br />Zero coding experience required.
+          Build real AI solutions for local businesses | 6 Volunteering Hours<br />Zero coding experience required.
         </p>
 
         <div className="hero-element mt-16 inline-block px-12 py-10 rounded-[2rem] bg-white/5 glass-3d-intensified text-white font-fredoka text-center lg:min-w-[400px]">
           <h3 className="text-primary font-norwester text-2xl md:text-3xl uppercase tracking-[0.2em] mb-4 opacity-80">Event Details</h3>
           <div className="h-[2px] w-12 bg-primary/40 mx-auto mb-6"></div>
           <div className="flex flex-col gap-4">
-            <span className="text-xl md:text-2xl opacity-90 tracking-wide">Saturday, May 25th, 2026</span>
-            <span className="text-xl md:text-2xl opacity-90 tracking-wide">9:00 AM - 5:00 PM</span>
+            <span className="text-xl md:text-2xl opacity-90 tracking-wide">Tuesday, June 23rd, 2026</span>
+            <span className="text-xl md:text-2xl opacity-90 tracking-wide">11:00 AM - 5:00 PM</span>
             <span className="text-xl md:text-2xl opacity-90 tracking-wide">Fleetwood Park Secondary</span>
           </div>
         </div>
 
         <div className="hero-element mt-12 flex flex-col md:flex-row items-center gap-4">
-          <button className="px-10 py-4 rounded-full glass-3d-primary text-white font-fredoka font-bold tracking-wider hover:scale-105 transition-all duration-300 text-lg">
-            Register Now
-          </button>
-
           <a
-            href="/details.pdf"
+            href={REGISTER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 mb-2 rounded-full glass-3d-card text-white font-fredoka font-medium hover:bg-white/20 transition-all duration-300 text-lg"
+            className="button-lift px-10 py-4 rounded-full glass-3d-primary text-white font-fredoka font-bold tracking-wider text-lg"
+          >
+            Register Now
+          </a>
+
+          <a
+            href={DETAILS_PDF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button-lift px-10 py-4 rounded-full glass-3d-card text-white font-fredoka font-medium hover:bg-white/20 text-lg"
           >
             More Details
           </a>

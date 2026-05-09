@@ -1,10 +1,7 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Perks from './components/Perks';
+import Sponsors from './components/Sponsors';
 import Mission from './components/Mission';
 import Protocol from './components/Protocol';
 import Roster from './components/Roster';
@@ -12,21 +9,9 @@ import FAQ from './components/FAQ';
 import Network from './components/Network';
 import Footer from './components/Footer';
 
-gsap.registerPlugin(ScrollTrigger);
-
 function App() {
-  const appRef = useRef();
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Global animations can be placed here
-    }, appRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div ref={appRef} className="min-h-screen bg-canvas selection:bg-primary/30 selection:text-white">
+    <div className="min-h-screen bg-canvas selection:bg-primary/30 selection:text-white">
       <Navbar />
       <Hero />
       <Perks />
@@ -34,6 +19,7 @@ function App() {
       <Protocol />
       <Roster />
       <Network />
+      <Sponsors />
       <FAQ />
       <Footer />
     </div>

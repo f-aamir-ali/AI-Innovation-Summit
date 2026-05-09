@@ -6,24 +6,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const phases = [
   {
-    time: "09:00 AM - 10:00 AM",
-    title: "Kickoff & No-Code Tool Training",
-    desc: "We teach you everything."
+    time: "11:00 AM - 12:30 PM",
+    title: "Kickoff & No-Code Tool Workshop",
+    desc: "No Experience Needed: We'll Teach You Everything"
   },
   {
-    time: "10:00 AM - 03:00 PM",
+    time: "12:30 PM - 3:00 PM",
     title: "The Build Phase",
-    desc: "Brainstorm and prototype with your team."
+    desc: "From Idea to Reality: Build Your Project"
   },
   {
-    time: "03:00 PM - 04:00 PM",
-    title: "The Science Fair Pitch",
-    desc: "Judges will walk by your table for your demo"
+    time: "3:00 PM - 4:00 PM",
+    title: "Science Fair Pitches, Peer Voting & Guest Speaker",
+    desc: "Present, Compete & Learn: Live Pitches & Guest Talk"
   },
   {
-    time: "04:00 PM - 05:00 PM",
-    title: "Awards & Wrap-up",
-    desc: "Celebrate and collect your prizes."
+    time: "4:00 PM - 5:00 PM",
+    title: "Judging, Awards Ceremony & Wrap-up",
+    desc: "Victory & Connection: Awards Ceremony & Final Insights"
   }
 ];
 
@@ -57,7 +57,7 @@ const Protocol = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
-          toggleActions: "play none none reverse"
+          once: true
         }
       });
     }, containerRef);
@@ -67,7 +67,7 @@ const Protocol = () => {
   return (
     <section id="schedule" ref={containerRef} className="py-32 md:py-48 px-6 md:px-12 w-full max-w-4xl mx-auto">
       <h2 className="text-4xl md:text-5xl font-norwester text-white mb-24 text-center tracking-wide">
-        The 8-Hour Blueprint
+        The 6-Hour Blueprint
       </h2>
 
       <div className="timeline-container relative pl-12 md:pl-20">
@@ -95,13 +95,19 @@ const Protocol = () => {
                   {phase.title}
                 </h3>
 
-                <p className="font-poppins text-white/60 text-base leading-relaxed">
-                  {phase.desc}
-                </p>
+                {phase.desc && (
+                  <p className="font-poppins text-white/60 text-base leading-relaxed">
+                    {phase.desc}
+                  </p>
+                )}
               </div>
             </div>
           ))}
         </div>
+
+        <p className="mt-5 text-right font-poppins text-xs text-white/40">
+          Timings may be subjective to change*
+        </p>
       </div>
     </section>
   );

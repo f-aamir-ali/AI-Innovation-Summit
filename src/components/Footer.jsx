@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
+import { DETAILS_PDF_URL, REGISTER_URL } from '../constants/links';
 
 const Footer = () => {
   return (
@@ -18,7 +19,7 @@ const Footer = () => {
               <div className="flex flex-row gap-4">
                 <a 
                   href="mailto:fpssaiclub@gmail.com" 
-                  className="flex items-center justify-center w-11 h-11 rounded-full bg-white/5 backdrop-blur-md hover:bg-white/15 hover:text-white transition-all duration-300"
+                  className="button-lift flex items-center justify-center w-11 h-11 rounded-full bg-white/5 backdrop-blur-md hover:bg-white/15 hover:text-white"
                   style={{ 
                     boxShadow: 'inset 1px 1px 1px rgba(255, 255, 255, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.3), 0px 8px 32px rgba(0, 0, 0, 0.4)'
                   }}
@@ -30,7 +31,7 @@ const Footer = () => {
                   href="https://www.instagram.com/fpss_ai.club/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="flex items-center justify-center w-11 h-11 rounded-full bg-white/5 backdrop-blur-md hover:bg-white/15 hover:text-white transition-all duration-300"
+                  className="button-lift flex items-center justify-center w-11 h-11 rounded-full bg-white/5 backdrop-blur-md hover:bg-white/15 hover:text-white"
                   style={{ 
                     boxShadow: 'inset 1px 1px 1px rgba(255, 255, 255, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.3), 0px 8px 32px rgba(0, 0, 0, 0.4)'
                   }}
@@ -58,14 +59,19 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            <button className="px-8 py-3 rounded-full glass-3d-primary text-white font-fredoka tracking-wider text-sm hover:scale-105 transition-all">
-              Register
-            </button>
             <a
-              href="/details.pdf"
+              href={REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 rounded-full glass-3d-card text-white font-fredoka font-medium text-center hover:bg-white/20 transition-all text-sm"
+              className="button-lift px-8 py-3 rounded-full glass-3d-primary text-white font-fredoka tracking-wider text-sm text-center"
+            >
+              Register
+            </a>
+            <a
+              href={DETAILS_PDF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-lift px-8 py-3 rounded-full glass-3d-card text-white font-fredoka font-medium text-center hover:bg-white/20 text-sm"
             >
               More Details
             </a>

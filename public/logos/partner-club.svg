@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Partner club placeholder">
+  <rect width="160" height="160" rx="80" fill="#1f497d"/>
+  <circle cx="80" cy="80" r="43" fill="none" stroke="#60a5fa" stroke-width="10"/>
+  <path d="M80 42v76M42 80h76" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="80" cy="80" r="12" fill="#93c5fd"/>
+</svg>

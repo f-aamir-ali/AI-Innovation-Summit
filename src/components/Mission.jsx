@@ -20,7 +20,7 @@ const Mission = () => {
         scrollTrigger: {
           trigger: missionRef.current,
           start: "top 75%",
-          toggleActions: "play none none reverse"
+          once: true
         }
       });
     }, containerRef);

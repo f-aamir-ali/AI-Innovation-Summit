@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Generation AI Inc.">
+  <defs>
+    <linearGradient id="genAiBg" x1="25" x2="155" y1="25" y2="155" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7db2ff"/>
+      <stop offset="0.48" stop-color="#3157f4"/>
+      <stop offset="1" stop-color="#101545"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="url(#genAiBg)"/>
+  <path d="M54 112V68h44c17 0 30 13 30 30v14" fill="none" stroke="#e9f2ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M91 90h37" fill="none" stroke="#e9f2ff" stroke-width="12" stroke-linecap="round"/>
+  <text x="90" y="142" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="4" fill="#e9f2ff">GEN AI</text>
+</svg>
