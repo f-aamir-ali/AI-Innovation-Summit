@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Earl Marriott CS Club logo">
+  <rect width="256" height="256" rx="128" fill="#050505"/>
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="13">
+    <rect x="88" y="88" width="80" height="80" rx="12"/>
+    <rect x="107" y="107" width="42" height="42" rx="6"/>
+    <path d="M98 54v31M128 45v40M158 54v31"/>
+    <path d="M98 171v31M128 171v40M158 171v31"/>
+    <path d="M54 98h31M45 128h40M54 158h31"/>
+    <path d="M171 98h31M171 128h40M171 158h31"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="98" cy="54" r="13"/>
+    <circle cx="128" cy="45" r="13"/>
+    <circle cx="158" cy="54" r="13"/>
+    <circle cx="98" cy="202" r="13"/>
+    <circle cx="128" cy="211" r="13"/>
+    <circle cx="158" cy="202" r="13"/>
+    <circle cx="54" cy="98" r="13"/>
+    <circle cx="45" cy="128" r="13"/>
+    <circle cx="54" cy="158" r="13"/>
+    <circle cx="202" cy="98" r="13"/>
+    <circle cx="211" cy="128" r="13"/>
+    <circle cx="202" cy="158" r="13"/>
+  </g>
+</svg>
