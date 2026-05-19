@@ -241,8 +241,8 @@ const Perks = () => {
               className="scholarship-badge liquid-glass-accent relative flex h-44 w-44 items-center justify-center overflow-hidden rounded-[2rem] text-center"
             >
               <div className="relative z-10">
-                <div className="font-norwester text-6xl leading-none text-white/90">1</div>
-                <div className="mt-2 font-fredoka text-xl font-bold tracking-wider text-white/85">FULL YEAR</div>
+                <div className="font-norwester text-6xl leading-none text-white/90">3</div>
+                <div className="mt-2 font-fredoka text-xl font-bold tracking-wider text-white/85">MONTHS</div>
                 <div className="mt-3 font-poppins text-base font-bold uppercase tracking-[0.18em] text-white/70">GENERATION AI</div>
               </div>
             </div>
